@@ -33,7 +33,7 @@ $(function() {
 
         // checking that all the urls are defined.
         it('ensures it has URL defined', function() {
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toEqual(0);
             }
@@ -47,7 +47,7 @@ $(function() {
 
         // checking that all the names are defined.
         it('ensures it has name defined', function() {
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name.length).not.toEqual(0);
             }
@@ -66,7 +66,7 @@ $(function() {
 
         // on page startup menu should be hidden by default.
         it('element is hidden by default', function() {
-            expect($('.menu-hidden')).toBeDefined();
+            expect($('body').hasClass('menu-hidden')).toBeDefined();
         });
 
         /* Write a test that ensures the menu changes
@@ -99,7 +99,7 @@ $(function() {
 
         // checking that class feed has atleast single entry in it.
         it('has at least a single .entry element within the .feed container', function(done) {
-            var entry = $('.entry');
+            var entry = $('.feed .entry');
             expect(entry.length).not.toBe(0);
             done();
         });
